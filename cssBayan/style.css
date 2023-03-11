@@ -1,0 +1,103 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(16, 26, 156);
+}
+
+
+
+.accordion:hover {
+    color: black;
+}
+
+.accordion-item input[type=radio] {
+	display: none;
+}
+
+.accordion-item {
+    padding: 0.5em;
+    border-bottom: 2px solid rgba(204, 204, 204, 0.5);
+    cursor: pointer;
+}
+
+.accordion-item-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.accordion-item span {
+    font-size: 2rem;
+}
+
+.accordion:hover .plus-icon {
+    width: 40px;
+    height: 40px;
+    background-image: url(assets/svg/plus.svg);
+    background-size: 40px 40px;
+    transition: .3s;
+}
+
+.accordion-item-title {
+    padding: 0.5em;
+}
+
+.accordion-item-title:hover {
+    color: blueviolet;
+    background-color: rgba(204, 204, 204, 0.5);
+}
+
+.accordion-item-title:hover .plus-icon {
+    transform: rotate(90deg);
+}
+
+.accordion-item-title label {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.accordion-content {
+    display: flex;
+    justify-content: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .5s linear;
+    cursor: pointer;
+}
+
+.accordion-content img {
+    transition: all .5s linear;
+}
+
+.accordion-content img:hover {
+    scale: 1.04;
+    transition: all .5s linear;
+}
+
+.accordion-item input:checked + label .accordion-content {
+    max-height: 100vh;
+    padding: 1rem;
+    overflow: unset;
+}
+
+.accordion-item input:checked + label .accordion-item-title {
+    background-color: rgba(204, 204, 204, 0.5);
+    color: rgb(79, 170, 212);
+}
+
+.accordion-item input:checked + label .plus-icon {
+    width: 50px;
+    height: 50px;
+    background-image: url(assets/svg/plus.svg);
+    background-size: 50px 50px;
+    transform: rotate(45deg);
+}
+
+.accordion-item:hover .accordion-content {
+    max-height: 100vh;
+    padding: 1rem;
+    overflow: unset;
+}
