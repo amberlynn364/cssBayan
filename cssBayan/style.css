@@ -19,6 +19,7 @@ body {
     padding: 0.5em;
     border-bottom: 2px solid rgba(204, 204, 204, 0.5);
     cursor: pointer;
+    transition: all .5s linear;
 }
 
 .accordion-item-title {
@@ -34,10 +35,10 @@ body {
 }
 
 .accordion:hover .plus-icon {
-    width: 40px;
-    height: 40px;
+    width: 1em;
+    height: 1em;
     background-image: url(assets/svg/plus.svg);
-    background-size: 40px 40px;
+    background-size: 1em 1em;
     transition: .3s;
 }
 
@@ -48,6 +49,7 @@ body {
 .accordion-item-title:hover {
     color: blueviolet;
     background-color: rgba(204, 204, 204, 0.5);
+    transition: all .5s linear;
 }
 
 .accordion-item-title:hover .plus-icon {
@@ -84,20 +86,51 @@ body {
 }
 
 .accordion-item input:checked + label .accordion-item-title {
-    background-color: rgba(204, 204, 204, 0.5);
+    background-color: rgba(189, 189, 189, 0.9);
     color: rgb(79, 170, 212);
 }
 
 .accordion-item input:checked + label .plus-icon {
-    width: 50px;
-    height: 50px;
+    width: 1.5em;
+    height: 1.5em;
     background-image: url(assets/svg/plus.svg);
-    background-size: 50px 50px;
+    background-size: 1.5em 1.5em;
     transform: rotate(45deg);
+    transition: .5s;
 }
 
 .accordion-item:hover .accordion-content {
     max-height: 100vh;
     padding: 1rem;
     overflow: unset;
+}
+
+.accordion-item:active {
+    background-color: rgba(189, 189, 189, 1);
+}
+
+@media (max-width: 820px) {
+    body {
+        font-size: 1.5em;
+    }
+    .accordion-item span {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        font-size: 1rem;
+    }
+    .accordion-item span {
+        font-size: 1rem;
+    }
+    .accordion-item {
+        width: 290px;
+    }
+
+    .accordion-content img {
+        width: 250px;
+        height: auto;
+    }
 }
