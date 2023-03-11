@@ -53,7 +53,7 @@ body {
 }
 
 .accordion-item-title:hover .plus-icon {
-    transform: rotate(90deg);
+    transform: rotate(45deg);
 }
 
 .accordion-item-title label {
